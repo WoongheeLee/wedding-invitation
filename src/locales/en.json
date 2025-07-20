@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "title": "Woonghee Lee & Tahmina Aslanova's Wedding"
+  },
+  "cover": {
+    "date": "Sep. 13, 2025 (Sat) 4:30 PM",
+    "place": "De Mer Wedding Hall, Gwangju, South Korea",
+    "groom_name": "Woonghee Lee",
+    "bride_name": "Tahmina Aslanova",
+    "and": "and"
+  },
+  "letter": {
+    "date": "2025.9.13",
+    "sub_title": "You're warmly invited to our wedding celebration.",
+    "letter_content": "Every moment we've shared with you has filled our lives with joy and warmth.\nNow, as we begin a new journey together, it would mean the world to us to have you by our side.\nYour presence, blessings, and warm wishes will make our special day even more meaningful.\nWe look forward to celebrating with you!",
+    "groom_name": "Woonghee Lee",
+    "bride_name": "Tahmina Aslanova",
+    "son_of": ", son of"
+  },
+  "gallery": {
+    "title": "Gallery",
+    "sub_title": "Tap any photo to view it larger, refresh to shuffle randomly 🎲"
+  },
+  "location": {
+    "title": "Venue",
+    "address_copied": "The address has been copied!",
+    "venue_name": "De Mer Wedding Hall (1F Le Ciel Hall)",
+    "venue_address": "549 Imbangul-daero, Gwangsan-gu, Gwangju",
+    "venue_sub_address": "(Docheon-dong 147-29)",
+    "venue_phone": "062-228-0000",
+    "directions_title": "Directions",
+    "ktx_title": "By KTX/SRT",
+    "ktx_station": "Get off at Gwangju Songjeong Station",
+    "ktx_bus_info": "Take city bus (across from Gwangju Songjeong Station)",
+    "ktx_bus_route": "Songjeong 33",
+    "ktx_stop": "Get off at Docheonje Bus Stop",
+    "express_title": "By Express Bus",
+    "express_station": "Get off at Gwangju U-Square",
+    "express_bus_info": "Take city bus (across from Gwangcheon Terminal)",
+    "express_bus_route": "Munheung 39",
+    "express_stop": "Get off at Docheonje Bus Stop",
+    "other_bus_title": "Other Bus Routes",
+    "other_bus_routes": "Kumho 46, Ilgok 10",
+    "other_bus_stop": "Get off at Docheonje Bus Stop",
+    "map_links_title": "Directions",
+    "naver_map": "Naver",
+    "kakao_map": "Kakao"
+  },
+  "account": {
+    "title": "Account Info",
+    "account_copied": "'s account number has been copied.",
+    "groom_title": "Groom Woonghee Lee",
+    "groom_bank": "Shinhan Bank",
+    "groom_account": "913-06-147398",
+    "bride_title": "Bride Tahmina Aslanova",
+    "bride_bank": "IBK Bank",
+    "bride_account": "054-157007-01-013",
+    "father_title": "Father Lee Song-hwan",
+    "father_bank": "NH Bank",
+    "father_account": "644-12-002258"
+  }
+}

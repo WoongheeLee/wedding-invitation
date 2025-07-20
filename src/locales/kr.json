@@ -1,0 +1,62 @@
+{
+	"meta": {
+		"title": "이웅희와 타흐미나 아슬라노바의 결혼식에 여러분을 초대합니다."
+	},
+	"cover": {
+		"date": "2025년 9월 13일 (토) 4시 30분",
+		"place": "광주광역시 드메르 웨딩홀",
+		"groom_name": "이웅희",
+		"bride_name": "타흐미나 아슬라노바",
+		"and": "그리고"
+	},
+	"letter": {
+		"date": "2025.9.13",
+		"sub_title": "소중한 여러분을 저희 결혼식에 초대합니다.",
+		"letter_content": "지금까지 곁에서 함께해 주신 모든 순간이\n저희에게 큰 힘과 따뜻한 기억으로 남아 있습니다.\n이제 저희는 서로를 깊이 아끼고 믿으며,\n새로운 길을 함께 걷고자 합니다.\n\n인생의 소중한 시작점에\n여러분을 모시고 기쁨을 나누고 싶습니다.\n따뜻한 축복과 응원의 마음을 보내 주신다면\n더 큰 용기와 기쁨으로 새 출발을 할 수 있을 것 같습니다.\n\n그 날, 소중한 여러분과 함께하길 고대하겠습니다.",
+		"groom_name": "이웅희",
+		"bride_name": "타흐미나 아슬라노바",
+		"son_of": "의 아들"
+	},
+	"gallery": {
+		"title": "사진 모음",
+		"sub_title": "사진을 탭하면 더 크게 볼 수 있고, 새로고침하면 랜덤하게 섞입니다 🎲"
+	},
+	"location": {
+		"title": "예식장",
+		"address_copied": "주소를 복사했습니다.",
+		"venue_name": "드메르 웨딩홀 (1층 르씨엘 홀)",
+		"venue_address": "광주광역시 광산구 임방울대로 549",
+		"venue_sub_address": "(도천동 147-29)",
+		"venue_phone": "062-228-0000",
+		"directions_title": "오시는 길",
+		"ktx_title": "KTX/SRT 이용시",
+		"ktx_station": "광주송정역 하차",
+		"ktx_bus_info": "시내버스 (광주송정역 건너편 승차)",
+		"ktx_bus_route": "송정 33",
+		"ktx_stop": "도촌제 정류장 하차",
+		"express_title": "고속버스 이용시",
+		"express_station": "광주 유스퀘어 하차",
+		"express_bus_info": "시내버스 (광천터미널 건너편 승차)",
+		"express_bus_route": "문흥 39",
+		"express_stop": "도촌제 정류장 하차",
+		"other_bus_title": "기타 버스노선",
+		"other_bus_routes": "금고 46, 일곡 10",
+		"other_bus_stop": "도촌제 정류장 하차",
+		"map_links_title": "길찾기",
+		"naver_map": "네이버",
+		"kakao_map": "카카오"
+	},
+	"account": {
+		"title": "계좌번호",
+		"account_copied": "님의 계좌번호가 복사되었습니다.",
+		"groom_title": "신랑 이웅희",
+		"groom_bank": "신한은행",
+		"groom_account": "913-06-147398",
+		"bride_title": "신부 타흐미나 아슬라노바",
+		"bride_bank": "기업은행(IBK)",
+		"bride_account": "054-157007-01-013",
+		"father_title": "혼주 이송환",
+		"father_bank": "농협은행",
+		"father_account": "644-12-002258"
+	}
+}
