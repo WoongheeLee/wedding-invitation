@@ -48,8 +48,13 @@
 		margin: 0 auto;
 		width: 70%;
 		height: auto;
-		// 하단에 여백 
-		margin-bottom: 1em;
+		max-width: 400px;
+		padding-bottom: 1em;
+		
+		@media (min-width: 768px) {
+			width: 50%;
+			max-width: 350px;
+		}
 	}
 
 	section.letter {
