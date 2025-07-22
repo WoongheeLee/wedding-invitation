@@ -26,7 +26,14 @@
 	}
 
 	function callVenue() {
-		window.open(`tel:${$_('location.venue_phone')}`);
+		// 모바일 기기 감지
+		const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+						 window.innerWidth <= 768;
+		
+		if (isMobile) {
+			window.open(`tel:${$_('location.venue_phone')}`);
+		}
+		// 데스크톱에서는 아무 동작 안 함
 	}
 
 	function openMap(url: string) {
@@ -54,9 +61,37 @@
 	</button>
 	<p class="sub-address">{$_('location.venue_sub_address')}</p>
 
+	<!-- 구글 맵 -->
+	<div class="map">
+		{#if googleMapsUrl}
+			<iframe
+				class="google-maps"
+				title={$_('location.venue_name')}
+				referrerpolicy="no-referrer-when-downgrade"
+				loading="lazy"
+				src={googleMapsUrl}>
+			</iframe>
+		{/if}
+	</div>
+	
+	<!-- 지도 링크 버튼들 -->
+	<div class="map-links">
+		<h3 class="section-title {localeStore.locale}">{$_('location.map_links_title')}</h3>
+		<div class="map-buttons">
+			<button class="map-button naver" onclick={() => openMap(`https://map.naver.com/v5/search/광주광역시 광산구 임방울대로 549`)}>
+				<span class="map-icon">N</span>
+				<span>{$_('location.naver_map')}</span>
+			</button>
+			<button class="map-button kakao" onclick={() => openMap(`https://map.kakao.com/link/search/광주광역시 광산구 임방울대로 549`)}>
+				<span class="map-icon">K</span>
+				<span>{$_('location.kakao_map')}</span>
+			</button>
+		</div>
+	</div>
+
 	<!-- 교통정보 -->
 	<div class="transportation-info">
-		<h3>{$_('location.directions_title')}</h3>
+		<h3 class="section-title {localeStore.locale}">{$_('location.directions_title')}</h3>
 		
 		<div class="transport-section">
 			<div class="transport-header">
@@ -94,32 +129,6 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="map">
-		{#if googleMapsUrl}
-			<iframe
-				class="google-maps"
-				title={$_('location.venue_name')}
-				referrerpolicy="no-referrer-when-downgrade"
-				loading="lazy"
-				src={googleMapsUrl}>
-			</iframe>
-		{/if}
-	</div>
-	
-	<div class="map-links">
-		<h3>{$_('location.map_links_title')}</h3>
-		<div class="map-buttons">
-			<button class="map-button naver" onclick={() => openMap(`https://map.naver.com/v5/search/광주광역시 광산구 임방울대로 549`)}>
-				<span class="map-icon">N</span>
-				<span>{$_('location.naver_map')}</span>
-			</button>
-			<button class="map-button kakao" onclick={() => openMap(`https://map.kakao.com/link/search/광주광역시 광산구 임방울대로 549`)}>
-				<span class="map-icon">K</span>
-				<span>{$_('location.kakao_map')}</span>
-			</button>
-		</div>
-	</div>
 	
 	<img class="location-deco" src={locationDeco} alt="" />
 </section>
@@ -143,6 +152,23 @@
 		color: $primary-color;
 		text-align: center;
 		margin-bottom: 1em;
+
+		&.kr {
+			@extend .title-font-kr;
+			letter-spacing: 1px;
+		}
+
+		&.en {
+			@extend .title-font-en;
+			letter-spacing: 1px;
+		}
+	}
+
+	h3.section-title {
+		color: $primary-color;
+		text-align: center;
+		margin-bottom: 1em;
+		margin-top: 2em;
 
 		&.kr {
 			@extend .title-font-kr;
