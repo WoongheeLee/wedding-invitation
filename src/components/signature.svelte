@@ -4,7 +4,12 @@
 </script>
 
 <div class="signature-container">
-	<p class="signature en">Customized with ♡ by Woonghee Lee & Tahmina Aslanova</p>
+	<p class="signature en">
+		Customized with ♡ by 
+		<a href="https://github.com/WoongheeLee" target="_blank" class="name-link">Woonghee Lee</a> 
+		& 
+		<a href="https://instagram.com" target="_blank" class="name-link">Tahmina Aslanova</a>
+	</p>
 	<a class="github-icon" href="https://github.com/anthopark/our-wedding-invitation" target="_blank" title="View original template by Emily & Anthony">
 		<Github size="1.1em" strokeWidth={1} />
 	</a>
@@ -23,6 +28,17 @@
 	p.signature {
 		font-size: 1rem;
 		margin: 0;
+		
+		.name-link {
+			color: $primary-color;
+			text-decoration: none;
+			transition: all 0.2s ease;
+			
+			&:hover {
+				color: darken($primary-color, 10%);
+				text-decoration: underline;
+			}
+		}
 	}
 	
 	.github-icon {
