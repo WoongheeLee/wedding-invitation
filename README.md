@@ -24,6 +24,9 @@ SvelteKit 기반의 반응형 웹 청첩장 템플릿 - WebP 최적화로 빠른
   - [6. 결혼식 날짜 및 달력 수정](#6-결혼식-날짜-및-달력-수정)
   - [7. 편지 내용 수정](#7-편지-내용-수정)
 - [🎨 추가 꾸미기](#-추가-꾸미기)
+  - [색상 테마 변경](#색상-테마-변경)
+  - [하단 장식 이미지 교체](#하단-장식-이미지-교체)
+  - [서명(Signature) 수정 또는 제거](#서명signature-수정-또는-제거)
 - [🚀 배포하기](#-배포하기)
 - [💡 팁](#-팁)
 - [🛠 개발 환경 설정](#-개발-환경-설정)
@@ -208,6 +211,25 @@ $font-color-default: #6b6b6b; // 기본 폰트색
 - **WebP 포맷** 사용
 - 가로 비율 권장 (1200px, 품질 80%)
 - 투명 배경이 필요한 경우 PNG 사용
+
+### 서명(Signature) 수정 또는 제거
+**파일**: `src/components/signature.svelte`
+
+현재 하단에 "Customized with ♡ by Woonghee Lee & Tahmina Aslanova" 가 표시됩니다.
+
+**수정하려면:**
+```html
+<p class="signature en">
+  Customized with ♡ by 
+  <a href="your-github-url" target="_blank" class="name-link">Your Name</a> 
+  & 
+  <a href="your-partner-url" target="_blank" class="name-link">Partner Name</a>
+</p>
+```
+
+**완전히 제거하려면:**
+- `src/components/signature.svelte` 파일 삭제
+- `src/routes/+page.svelte`에서 `<Signature />` 컴포넌트 import 및 사용 제거
 
 ## 🚀 배포하기
 
