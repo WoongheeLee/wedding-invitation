@@ -1,1 +1,0 @@
-// RSVP functionality removed - server actions no longer needed

@@ -29,12 +29,12 @@
 			<div class="family-description kr">
 				<p>
 					이송환<span class="name-divider">{@html nameDivider}</span> 박숙영
-					<span class="son">{$_('letter.son_of')}</span>{$_('letter.groom_name')}
+					<span class="son">{$_('letter.son_of')}</span>웅희
 				</p>
 				<p>
 					일함 아슬라노프<span class="name-divider">{@html nameDivider}</span> 파티마 아슬라노바<span class="daughter"
 						>의 딸</span
-					>{$_('letter.bride_name')}
+					>타흐미나
 				</p>			</div>
 		{/if}
 	</div>
