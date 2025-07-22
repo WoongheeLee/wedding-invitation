@@ -1,24 +1,24 @@
 <script lang="ts">
-	import photo1 from '$lib/assets/gallery/01_ YONG-141-.jpg';
-	import photo2 from '$lib/assets/gallery/02_ YONG-26-.jpg';
-	import photo3 from '$lib/assets/gallery/03_ YONG-68-.jpg';
-	import photo4 from '$lib/assets/gallery/04_ YONG-837-.jpg';
-	import photo5 from '$lib/assets/gallery/05_ YONG-852-.jpg';
-	import photo6 from '$lib/assets/gallery/06_ YONG-886-.jpg';
-	import photo7 from '$lib/assets/gallery/07_ YONG-904-.jpg';
-	import photo8 from '$lib/assets/gallery/08_09_ YONG-929-.jpg';
-	import photo10 from '$lib/assets/gallery/10_ YONG-1000-.jpg';
-	import photo11 from '$lib/assets/gallery/11_ YONG-973-.jpg';
-	import photo12 from '$lib/assets/gallery/12_ YONG-505-.jpg';
-	import photo13 from '$lib/assets/gallery/13_ YONG-556-.jpg';
-	import photo14 from '$lib/assets/gallery/14_15_ YONG-435-.jpg';
-	import photo16 from '$lib/assets/gallery/16_ YONG-396-.jpg';
-	import photo17 from '$lib/assets/gallery/17_ YONG-572-.jpg';
-	import photo18 from '$lib/assets/gallery/18_ YONG-709-.jpg';
-	import photo19 from '$lib/assets/gallery/19_ YONG-735-.jpg';
-	import photo20 from '$lib/assets/gallery/20_ YONG-783-.jpg';
-	import photo21 from '$lib/assets/gallery/21_ YONG-798-.jpg';
-	import photo22 from '$lib/assets/gallery/22_ YONG-180-.jpg';
+	import photo1 from '$lib/assets/gallery/01_ YONG-141-.webp';
+	import photo2 from '$lib/assets/gallery/02_ YONG-26-.webp';
+	import photo3 from '$lib/assets/gallery/03_ YONG-68-.webp';
+	import photo4 from '$lib/assets/gallery/04_ YONG-837-.webp';
+	import photo5 from '$lib/assets/gallery/05_ YONG-852-.webp';
+	import photo6 from '$lib/assets/gallery/06_ YONG-886-.webp';
+	import photo7 from '$lib/assets/gallery/07_ YONG-904-.webp';
+	import photo8 from '$lib/assets/gallery/08_09_ YONG-929-.webp';
+	import photo10 from '$lib/assets/gallery/10_ YONG-1000-.webp';
+	import photo11 from '$lib/assets/gallery/11_ YONG-973-.webp';
+	import photo12 from '$lib/assets/gallery/12_ YONG-505-.webp';
+	import photo13 from '$lib/assets/gallery/13_ YONG-556-.webp';
+	import photo14 from '$lib/assets/gallery/14_15_ YONG-435-.webp';
+	import photo16 from '$lib/assets/gallery/16_ YONG-396-.webp';
+	import photo17 from '$lib/assets/gallery/17_ YONG-572-.webp';
+	import photo18 from '$lib/assets/gallery/18_ YONG-709-.webp';
+	import photo19 from '$lib/assets/gallery/19_ YONG-735-.webp';
+	import photo20 from '$lib/assets/gallery/20_ YONG-783-.webp';
+	import photo21 from '$lib/assets/gallery/21_ YONG-798-.webp';
+	import photo22 from '$lib/assets/gallery/22_ YONG-180-.webp';
 
 
 	import PhotoSwipeLightBox from 'photoswipe/lightbox';
