@@ -57,6 +57,31 @@
 	}
 
 	const calendar = generateCalendar(year, month);
+
+	// 구글 캘린더 링크 생성
+	function createGoogleCalendarLink() {
+		const eventDetails = {
+			title: '웅희 ♡ 타흐미나 결혼식',
+			details: '웅희와 타흐미나의 결혼식에 초대합니다.',
+			location: '드메르 웨딩홀 (1층 르씨엘 홀), 광주광역시 광산구 임방울대로 549',
+			startDate: '20250913T073000Z', // 2025-09-13 16:30 KST = 07:30 UTC
+			endDate: '20250913T093000Z'    // 2시간 후 종료
+		};
+
+		const params = new URLSearchParams({
+			action: 'TEMPLATE',
+			text: eventDetails.title,
+			details: eventDetails.details,
+			location: eventDetails.location,
+			dates: `${eventDetails.startDate}/${eventDetails.endDate}`
+		});
+
+		return `https://calendar.google.com/calendar/render?${params.toString()}`;
+	}
+
+	function handleWeddingDayClick() {
+		window.open(createGoogleCalendarLink(), '_blank');
+	}
 </script>
 
 <section class="calendar">
@@ -85,7 +110,10 @@
 							 class:wedding-day={dayData.day === weddingDay} 
 							 class:empty={dayData.day === null}
 							 class:saturday={dayData.dayOfWeek === 5 && dayData.day !== null}
-							 class:sunday={dayData.dayOfWeek === 6 && dayData.day !== null}>
+							 class:sunday={dayData.dayOfWeek === 6 && dayData.day !== null}
+							 on:click={dayData.day === weddingDay ? handleWeddingDayClick : undefined}
+							 role={dayData.day === weddingDay ? "button" : undefined}
+							 tabindex={dayData.day === weddingDay ? 0 : undefined}>
 							{#if dayData.day !== null}
 								<div class="day-content">
 									<span class="day-number">{dayData.day}</span>
@@ -196,6 +224,12 @@
 				font-weight: bold;
 				transform: scale(1.1);
 				box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+				cursor: pointer;
+				
+				&:hover {
+					transform: scale(1.15);
+					box-shadow: 0 6px 16px rgba(255, 107, 107, 0.4);
+				}
 				
 				.day-number {
 					text-shadow: 0 1px 3px #000000;
