@@ -22,21 +22,24 @@
 ```
 
 ### 2. 청첩장 메인 사진 교체
-**파일**: `src/lib/assets/cover.jpg`
+**파일**: `src/lib/assets/cover.webp`
+- **WebP 포맷** 사용 (JPEG 대비 30% 작은 용량)
 - 세로 비율 권장 (9:16 또는 3:4)
-- 해상도: 1080px 이상 권장
+- 해상도: 1600px 이상 권장
+- 품질: 80% (최적 균형점)
 
 ### 3. 갤러리 사진 교체
 **폴더**: `src/lib/assets/gallery/`
 
 1. 기존 사진들을 모두 삭제
 2. 새 사진들을 업로드 (권장: 20-30장)
-3. 파일명을 `01_photo.jpg`, `02_photo.jpg` 형식으로 변경
-4. `src/components/gallery.svelte` 파일에서 import 경로 수정:
+3. **WebP 포맷**으로 변환 후 업로드
+4. 파일명을 `01_photo.webp`, `02_photo.webp` 형식으로 변경
+5. `src/components/gallery.svelte` 파일에서 import 경로 수정:
 
 ```javascript
-import photo1 from '$lib/assets/gallery/01_photo.jpg';
-import photo2 from '$lib/assets/gallery/02_photo.jpg';
+import photo1 from '$lib/assets/gallery/01_photo.webp';
+import photo2 from '$lib/assets/gallery/02_photo.webp';
 // ... 추가 사진들
 
 const originalPhotos = [
@@ -48,6 +51,12 @@ const originalPhotos = [
   // ... 각 사진의 실제 크기 입력
 ];
 ```
+
+**⚡ 이미지 최적화 가이드:**
+- **WebP 포맷 사용** (현대 브라우저 100% 지원)
+- 메인 이미지: 1600px, 품질 80%
+- 갤러리 이미지: 1200px, 품질 75%
+- [Squoosh](https://squoosh.app) 또는 Sharp를 사용한 자동 최적화 권장
 
 ### 4. 예식장 정보 수정
 **파일**: `src/locales/kr.json`, `src/locales/en.json`
@@ -139,9 +148,10 @@ $font-color-default: #6b6b6b; // 기본 폰트색
 ```
 
 ### 하단 장식 이미지 교체
-**파일**: `src/lib/assets/letter-bottom.jpg`
-- 가로 비율 권장
-- 투명 배경 PNG도 가능
+**파일**: `src/lib/assets/letter-bottom.webp`
+- **WebP 포맷** 사용
+- 가로 비율 권장 (1200px, 품질 80%)
+- 투명 배경이 필요한 경우 PNG 사용
 
 ## 🚀 배포하기
 
@@ -232,9 +242,38 @@ export default config;
 
 ## 💡 팁
 
-### 사진 최적화
-- 용량을 줄이기 위해 [TinyPNG](https://tinypng.com) 사용 권장
+### 🔥 사진 최적화 (중요!)
+이 템플릿은 **WebP 포맷**을 사용하여 로딩 속도를 최적화했습니다.
+
+**자동 최적화 스크립트:**
+1. 원본 이미지를 `src/lib/assets/` 폴더에 넣고
+2. 아래 스크립트를 실행하면 자동으로 WebP 변환:
+
+```javascript
+// optimize.js
+import sharp from 'sharp';
+
+// 커버 이미지 최적화
+await sharp('cover-original.jpg')
+  .resize({ width: 1600 })
+  .webp({ quality: 80 })
+  .toFile('cover.webp');
+
+// 갤러리 이미지 최적화
+await sharp('gallery-original.jpg')
+  .resize({ width: 1200, height: 900, fit: 'inside' })
+  .webp({ quality: 75 })
+  .toFile('gallery.webp');
+```
+
+**수동 최적화:**
+- [Squoosh](https://squoosh.app) - 구글의 무료 이미지 최적화 도구
+- [TinyPNG](https://tinypng.com) - WebP 지원
 - 갤러리 사진은 1200x1800 또는 1800x1200 비율 권장
+
+**성능 향상 결과:**
+- 기존: 200MB+ → 최적화 후: 3-4MB (98% 감소!)
+- 모바일에서도 빠른 로딩 속도 보장
 
 ### 갤러리 랜덤 셔플
 - 새로고침할 때마다 사진 순서가 랜덤하게 바뀝니다
