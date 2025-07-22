@@ -50,7 +50,7 @@
 <style lang="scss">
 	section.cover {
 		position: relative;
-		background-image: url('/src/lib/assets/cover.jpg');
+		background-image: url('/src/lib/assets/cover.webp');
 		background-repeat: no-repeat;
 		background-position: center center;
 		background-size: cover;
