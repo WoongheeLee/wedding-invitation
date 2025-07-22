@@ -24,6 +24,7 @@ jobs:
         run: npm run build
         env:
           PUBLIC_GOOGLE_MAPS_API_KEY: ${{ secrets.PUBLIC_GOOGLE_MAPS_API_KEY }}
+          NODE_ENV: production
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
