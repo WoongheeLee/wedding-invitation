@@ -8,18 +8,15 @@
 	const month = 9; // 9월
 	const weddingDay = 13; // 결혼식 날짜 (토요일)
 
-	// 요일 이름 (월요일 시작)
-	const weekdays = ['월', '화', '수', '목', '금', '토', '일'];
-	const weekdaysEn = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
+	// 요일 이름 (일요일 시작)
+	const weekdays = ['일', '월', '화', '수', '목', '금', '토'];
+	const weekdaysEn = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
 
-	// 달력 생성 함수 (월요일 시작)
+	// 달력 생성 함수 (일요일 시작)
 	function generateCalendar(year: number, month: number) {
 		const firstDay = new Date(year, month - 1, 1);
 		const lastDay = new Date(year, month, 0);
-		let startDate = firstDay.getDay(); // 첫 번째 날의 요일 (0=일요일)
-		
-		// 월요일 시작으로 변환 (일요일을 6으로, 월요일을 0으로)
-		startDate = startDate === 0 ? 6 : startDate - 1;
+		const startDate = firstDay.getDay(); // 첫 번째 날의 요일 (0=일요일)
 		const daysInMonth = lastDay.getDate();
 		
 		const calendar = [];
@@ -32,9 +29,7 @@
 		
 		// 날짜 채우기
 		for (let day = 1; day <= daysInMonth; day++) {
-			const originalDayOfWeek = new Date(year, month - 1, day).getDay();
-			// 월요일 시작으로 변환
-			const dayOfWeek = originalDayOfWeek === 0 ? 6 : originalDayOfWeek - 1;
+			const dayOfWeek = new Date(year, month - 1, day).getDay(); // 0=일요일, 6=토요일
 			week.push({ day, dayOfWeek });
 			
 			// 주가 완성되면 calendar에 추가
@@ -109,8 +104,8 @@
 						<div class="day-cell" 
 							 class:wedding-day={dayData.day === weddingDay} 
 							 class:empty={dayData.day === null}
-							 class:saturday={dayData.dayOfWeek === 5 && dayData.day !== null}
-							 class:sunday={dayData.dayOfWeek === 6 && dayData.day !== null}
+							 class:saturday={dayData.dayOfWeek === 6 && dayData.day !== null}
+							 class:sunday={dayData.dayOfWeek === 0 && dayData.day !== null}
 							 on:click={dayData.day === weddingDay ? handleWeddingDayClick : undefined}
 							 role={dayData.day === weddingDay ? "button" : undefined}
 							 tabindex={dayData.day === weddingDay ? 0 : undefined}>
@@ -169,12 +164,12 @@
 				font-size: 0.9rem;
 				color: #666;
 				
-				&:nth-child(6) {
-					color: #a8c8f0; // 토요일 파스텔 블루
+				&:first-child {
+					color: #fab8b8; // 일요일 파스텔 레드
 				}
 				
 				&:last-child {
-					color: #fab8b8; // 일요일 파스텔 레드
+					color: #a8c8f0; // 토요일 파스텔 블루
 				}
 			}
 		}
