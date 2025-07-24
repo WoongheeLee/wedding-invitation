@@ -6,8 +6,8 @@ SvelteKit 기반의 반응형 웹 청첩장 템플릿 - WebP 최적화로 빠른
 
 | 언어 | 링크 | 설명 |
 |------|------|------|
-| 🇰🇷 한국어 | [woonghellee.github.io/wedding-invitation/?lang=kr](https://woonghellee.github.io/wedding-invitation/?lang=kr) | 기본 버전 |
-| 🇺🇸 English | [woonghellee.github.io/wedding-invitation/?lang=en](https://woonghellee.github.io/wedding-invitation/?lang=en) | 영문 버전 |
+| 🇰🇷 한국어 | [woongheelee.github.io/wedding-invitation/?lang=kr](https://woonghellee.github.io/wedding-invitation/?lang=kr) | 기본 버전 |
+| 🇺🇸 English | [woongheelee.github.io/wedding-invitation/?lang=en](https://woonghellee.github.io/wedding-invitation/?lang=en) | 영문 버전 |
 
 > 💡 **QR코드로 모바일에서 확인해보세요!**
 
