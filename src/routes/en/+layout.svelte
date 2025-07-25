@@ -3,7 +3,7 @@
 	import '/src/i18n.svelte.ts';
 	import { localeStore } from '../../i18n.svelte';
 	import { onMount } from 'svelte';
-	import { _, locale } from 'svelte-i18n';
+	import { _ } from 'svelte-i18n';
 	import { page } from '$app/stores';
 
 	let { children, data } = $props();
@@ -11,7 +11,9 @@
 	// /en 라우트에서는 강제로 영어 설정
 	onMount(() => {
 		document.body.classList.add('loaded');
-		locale.set('en');
+		if (localeStore.locale !== 'en') {
+			localeStore.set('en');
+		}
 	});
 
 	let localeLoaded = $derived(!localeStore.isLoading && localeStore.locale);
