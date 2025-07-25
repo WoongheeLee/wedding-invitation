@@ -4,8 +4,9 @@
 	import { localeStore } from '../i18n.svelte';
 	import { onMount } from 'svelte';
 	import { _ } from 'svelte-i18n';
+	import { page } from '$app/stores';
 
-	let { children } = $props();
+	let { children, data } = $props();
 
 	let localeLoaded = $derived(!localeStore.isLoading && localeStore.locale);
 	let title = $derived(localeLoaded ? $_('meta.title') : 'Loading...');
@@ -27,11 +28,19 @@
 		rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
 	/>
-	<!-- <meta property="og:title" content="Emily & Anthony's Wedding" /> -->
-	<meta property="og:description" content="Please join us on our most special day!" />
-	<!-- <meta property="og:image" content="https://emily-marries-anthony.com/preview.jpg" /> -->
-	<!-- <meta property="og:url" content="https://emily-marries-anthony.com/" /> -->
+	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
+	<meta property="og:url" content={data?.meta?.url || 'https://wedding.woongheelee.com/'} />
+	<meta property="og:title" content={data?.meta?.title || title} />
+	<meta property="og:description" content={data?.meta?.description || 'Please join us on our most special day!'} />
+	<meta property="og:image" content={data?.meta?.ogImage || 'https://wedding.woongheelee.com/preview.jpg'} />
+	
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content={data?.meta?.url || 'https://wedding.woongheelee.com/'} />
+	<meta property="twitter:title" content={data?.meta?.title || title} />
+	<meta property="twitter:description" content={data?.meta?.description || 'Please join us on our most special day!'} />
+	<meta property="twitter:image" content={data?.meta?.ogImage || 'https://wedding.woongheelee.com/preview.jpg'} />
 </svelte:head>
 
 {#if localeLoaded}
