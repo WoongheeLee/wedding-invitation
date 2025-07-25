@@ -3,10 +3,11 @@ import enLocale from '../locales/en.json';
 
 export const prerender = true;
 
-export async function load({ url, request }) {
+export async function load({ request }) {
+	// prerender에서는 기본적으로 한국어로 설정
 	// Accept-Language 헤더에서 언어 감지 (prerender에서는 request가 없을 수 있음)
 	const acceptLanguage = request?.headers?.get('accept-language') || '';
-	const isKorean = acceptLanguage.includes('ko') || url.searchParams.get('lang') === 'kr';
+	const isKorean = acceptLanguage.includes('ko') || true; // prerender에서는 기본 한국어
 	
 	const locale = isKorean ? krLocale : enLocale;
 	
