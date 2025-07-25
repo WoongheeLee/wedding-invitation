@@ -3,7 +3,7 @@
 	import '/src/i18n.svelte.ts';
 	import { localeStore } from '../i18n.svelte';
 	import { onMount } from 'svelte';
-	import { _ } from 'svelte-i18n';
+	import { _, locale } from 'svelte-i18n';
 	import { page } from '$app/stores';
 
 	let { children, data } = $props();
@@ -13,6 +13,8 @@
 	
 	onMount(() => {
 		document.body.classList.add('loaded');
+		// 루트 페이지에서는 한국어 설정
+		locale.set('kr');
 	});
 </script>
 
