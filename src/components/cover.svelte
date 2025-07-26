@@ -31,8 +31,8 @@
 	</div>
 
 	<div class="names-kr-box">
-		<span class="names kr {localeStore.locale}">{$_('cover.groom_name')} {$_('cover.and')}</span>
-		<span class="names kr {localeStore.locale}">{$_('cover.bride_name')}</span>
+		<span class="names {localeStore.locale === 'en' ? 'en-sacramento' : 'kr'} {localeStore.locale}">{$_('cover.groom_name')}{$_('cover.and')}</span>
+		<span class="names {localeStore.locale === 'en' ? 'en-sacramento' : 'kr'} {localeStore.locale}">{$_('cover.bride_name')}</span>
 	</div>
 
 	<div class="cover-title-container">
@@ -78,6 +78,10 @@
 
 			&.en {
 				letter-spacing: 0.1em;
+			}
+
+			&.en-sacramento {
+				font-weight: 600;
 			}
 		}
 	}
