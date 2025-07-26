@@ -75,7 +75,7 @@
 	}
 
 	function handleWeddingDayClick() {
-		window.open(createGoogleCalendarLink(), '_blank');
+		window.location.href = createGoogleCalendarLink();
 	}
 </script>
 
@@ -127,6 +127,8 @@
 		</div>
 	</div>
 	
+	<p class="sub-title {localeStore.locale}">{$_('calendar.sub_title')}</p>
+	
 	<img class="calendar-deco" src={calendarDeco} alt="calendar deco" />
 </section>
 
@@ -143,6 +145,18 @@
 			
 			&.kr {
 				@extend .title-font-kr;
+			}
+		}
+
+		.sub-title {
+			text-align: center;
+			margin-top: 1.5em;
+			font-size: 0.9rem;
+			color: #666;
+			font-style: italic;
+
+			&.kr {
+				font-style: normal;
 			}
 		}
 
